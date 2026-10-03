@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --neu-bg-light: #E8ECF3;
+    --neu-bg-dark: #151A24;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: -0.012em;
+    line-height: 1.625;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--neu-bg-light);
+    color: #1e293b;
+    letter-spacing: -0.012em;
+    line-height: 1.625;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    background-color: var(--neu-bg-dark);
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.028em;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  p {
+    letter-spacing: -0.012em;
+    line-height: 1.68;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-800 {
+  perspective: 800px;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* -------------------------------------------------------------
+   LIGHT MODE NEUMORPHISM (Background: #E8ECF3)
+   ------------------------------------------------------------- */
+.neu-flat {
+  background: #E8ECF3;
+}
+
+.neu-raised {
+  background: #E8ECF3;
+  box-shadow: 7px 7px 16px #bec5d1, -7px -7px 16px #ffffff;
+}
+
+.neu-raised-sm {
+  background: #E8ECF3;
+  box-shadow: 4px 4px 10px #c5cbd5, -4px -4px 10px #ffffff;
+}
+
+.neu-raised-lg {
+  background: #E8ECF3;
+  box-shadow: 12px 12px 28px #b4bcc8, -12px -12px 28px #ffffff;
+}
+
+.neu-inset {
+  background: #E8ECF3;
+  box-shadow: inset 5px 5px 10px #c1c8d4, inset -5px -5px 10px #ffffff;
+}
+
+.neu-inset-sm {
+  background: #E8ECF3;
+  box-shadow: inset 3px 3px 6px #c7ceda, inset -3px -3px 6px #ffffff;
+}
+
+.neu-button {
+  background: #E8ECF3;
+  box-shadow: 5px 5px 12px #c2c9d6, -5px -5px 12px #ffffff;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.neu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 7px 7px 16px #bbc3d0, -7px -7px 16px #ffffff;
+}
+
+.neu-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 7px #c1c8d4, inset -3px -3px 7px #ffffff;
+}
+
+.neu-button-pressed {
+  background: #E8ECF3;
+  box-shadow: inset 3px 3px 7px #c1c8d4, inset -3px -3px 7px #ffffff;
+}
+
+.neu-accent-button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 6px 6px 16px #b6bfcc, -5px -5px 14px #ffffff;
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.neu-accent-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 20px #acb6c4, -6px -6px 16px #ffffff;
+}
+
+.neu-accent-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 7px #1e40af, inset -3px -3px 7px #3b82f6;
+}
+
+/* -------------------------------------------------------------
+   DARK MODE NEUMORPHISM (Background: #151A24)
+   ------------------------------------------------------------- */
+html.dark .neu-flat {
+  background: #151A24;
+}
+
+html.dark .neu-raised {
+  background: #151A24;
+  box-shadow: 7px 7px 18px #0b0e14, -7px -7px 18px #1f2634;
+}
+
+html.dark .neu-raised-sm {
+  background: #151A24;
+  box-shadow: 4px 4px 10px #0c0f16, -4px -4px 10px #1d2432;
+}
+
+html.dark .neu-raised-lg {
+  background: #151A24;
+  box-shadow: 12px 12px 28px #080a0e, -12px -12px 28px #222a3a;
+}
+
+html.dark .neu-inset {
+  background: #151A24;
+  box-shadow: inset 5px 5px 10px #0b0e14, inset -5px -5px 10px #1f2634;
+}
+
+html.dark .neu-inset-sm {
+  background: #151A24;
+  box-shadow: inset 3px 3px 6px #0c0f16, inset -3px -3px 6px #1d2432;
+}
+
+html.dark .neu-button {
+  background: #151A24;
+  box-shadow: 5px 5px 14px #0c0f16, -5px -5px 14px #1f2634;
+}
+
+html.dark .neu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 7px 7px 18px #090c12, -7px -7px 18px #222a3a;
+}
+
+html.dark .neu-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 7px #0b0e14, inset -3px -3px 7px #1f2634;
+}
+
+html.dark .neu-button-pressed {
+  background: #151A24;
+  box-shadow: inset 3px 3px 7px #0b0e14, inset -3px -3px 7px #1f2634;
+}
+
+html.dark .neu-accent-button {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  box-shadow: 6px 6px 18px #080a0e, -5px -5px 14px #1e2635;
+  color: #ffffff;
+}
+
+html.dark .neu-accent-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 22px #06080b, -6px -6px 16px #212a3b;
+}
+
+html.dark .neu-accent-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 7px #172554, inset -3px -3px 7px #2563eb;
+}
+
+/* Floating animation loops */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatGentleRev {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-float-rev {
+  animation: floatGentleRev 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-rev {
+    animation: none !important;
+  }
+}
+
+/* Print styling for resume generation */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  nav, footer, .no-print, [role="dialog"] button {
+    display: none !important;
+  }
+
+  .resume-printable {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+}
+
+
