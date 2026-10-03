@@ -131,40 +131,35 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 transform: `perspective(1000px) rotateX(${tilt.x.toFixed(2)}deg) rotateY(${tilt.y.toFixed(2)}deg)`,
                 transition: isHoveringPortrait ? 'transform 0.08s ease-out' : 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}
-              className="relative w-72 h-88 sm:w-80 sm:h-96 preserve-3d"
+              className="relative w-72 h-[410px] sm:w-84 sm:h-[470px] preserve-3d"
             >
               {/* Outer 3D Neumorphic Frame */}
-              <div className="absolute inset-0 rounded-3xl neu-raised-lg p-5 flex flex-col items-center justify-between preserve-3d">
-                {/* Top Bar of Portrait Frame */}
-                <div className="w-full flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400 px-1">
-                  <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                    <span className="font-mono text-[11px]">Educator Profile</span>
-                  </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                </div>
+              <div className="absolute inset-0 rounded-3xl neu-raised-lg p-3 sm:p-4 flex flex-col items-center justify-between preserve-3d">
+                {/* Inner Inset Portrait Container */}
+                <div className="w-full h-full rounded-2xl neu-inset p-2 flex flex-col relative overflow-hidden group">
+                  <img
+                    src="/src/assets/images/hero_portrait_1791055924778.jpg"
+                    alt="Shanmugapriya R - Academy Counsellor & Trainer at study and guidance workstation"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover rounded-xl shadow-inner group-hover:scale-[1.03] transition-transform duration-500"
+                  />
 
-                {/* Inner Inset Portrait Container (Ready for photo or elegant avatar) */}
-                <div className="w-full h-60 rounded-2xl neu-inset p-4 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                  {/* Stylized Educator Badge & Monogram */}
-                  <div className="w-24 h-24 rounded-full neu-raised flex items-center justify-center text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-105 transition-transform duration-300">
-                    <User className="w-12 h-12 stroke-[1.5]" />
+                  {/* Elegant bottom gradient caption scrim */}
+                  <div className="absolute inset-x-2 bottom-2 p-3 bg-gradient-to-t from-slate-950/85 via-slate-900/50 to-transparent rounded-b-xl text-white">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-xs sm:text-sm font-extrabold tracking-tight text-white drop-shadow-sm">
+                          Shanmugapriya R
+                        </p>
+                        <p className="text-[11px] font-semibold text-blue-300 drop-shadow-sm">
+                          Academy Counsellor | Trainer | Mentor
+                        </p>
+                      </div>
+                      <div className="w-6 h-6 rounded-full bg-blue-600/80 backdrop-blur-sm flex items-center justify-center text-white">
+                        <Sparkles className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-sm font-bold text-slate-900 dark:text-white">
-                    Shanmugapriya R
-                  </p>
-                  <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
-                    Academy Counsellor & Trainer
-                  </p>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-mono">
-                    Professional Portrait Container
-                  </p>
-                </div>
-
-                {/* Bottom Credential Tag */}
-                <div className="w-full flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 pt-2 border-t border-slate-300/40 dark:border-slate-700/40">
-                  <span className="font-medium">Cybersecurity Academy</span>
-                  <span className="font-mono text-[11px]">B.E. Comp Sci</span>
                 </div>
               </div>
 
